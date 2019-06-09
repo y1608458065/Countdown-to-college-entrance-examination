@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="http://www.gaokao.com/favicon.ico" rel="shortcut icon">
+    <title>高考倒计时</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .Countdown {
+            background-color: pink;
+            width: auto;
+            height: -webkit-fill-available;
+            text-align: center;
+            padding-top: 40px;
+
+        }
+
+        span {
+            font-size: 400%;
+
+        }
+
+        .time {
+            font-size: 200%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="Countdown">
+        <span>距离</span><span>2019</span><span>年</span><br>
+        <span>全国高考 <br> 还有</span><span>0</span><span>天</span><br>
+        <span class="time">现在时间：</span><br>
+        <span class="time"></span>
+    </div>
+
+</body>
+<script>
+
+
+
+
+
+    (function startTime() {
+        var presentTime = new Date();
+        var objectTime = new Date();
+        objectTime.setFullYear(objectTime.getFullYear() + 1, 5, 7);
+        var countDown = objectTime.getTime() - presentTime.getTime();
+        document.getElementsByTagName("span")[1].innerHTML = objectTime.getFullYear();
+        document.getElementsByTagName("span")[4].innerHTML = countDown / 1000 / 60 / 60 / 24;
+        console.log(presentTime);
+        console.log(objectTime);
+        console.log(countDown);
+
+
+
+
+        var today = new Date();
+        var year = today.getFullYear();
+        var month = today.getMonth();
+        var day = today.getDate();
+        var hours = today.getHours();
+        var minutes = today.getMinutes();
+        var seconds = today.getSeconds();
+        document.getElementsByClassName("time")[1].innerHTML =year + "年" + (month + 1) + "月" + day + "日" + hours + ":" + minutes + ":" + seconds;
+        t = setTimeout(function () { startTime() }, 500);
+    }())
+</script>
+
+</html>
