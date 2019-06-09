@@ -54,7 +54,7 @@
         objectTime.setFullYear(objectTime.getFullYear() + 1, 5, 7);
         var countDown = objectTime.getTime() - presentTime.getTime();
         document.getElementsByTagName("span")[1].innerHTML = objectTime.getFullYear();
-        document.getElementsByTagName("span")[4].innerHTML = countDown / 1000 / 60 / 60 / 24;
+        document.getElementsByTagName("span")[4].innerHTML = parseInt(countDown / 1000 / 60 / 60 / 24) ;
         console.log(presentTime);
         console.log(objectTime);
         console.log(countDown);
