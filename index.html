@@ -49,14 +49,15 @@
         var presentTime = new Date();
         var objectTime = new Date();
         var xYear = 1;
-        if (new Date().getMonth() < 6 && new Date().getDate() < 7) {
+        var xYeardate = new Date();
+        
+        xYeardate.setFullYear(new Date().getFullYear(), 5, 7);
+        if (new Date() < xYeardate) {
             xYear = 0
         }
+
         objectTime.setFullYear(objectTime.getFullYear() + xYear, 5, 7);
         var countDown = objectTime.getTime() - presentTime.getTime();
-
-
-
 
 
 
